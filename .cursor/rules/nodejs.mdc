@@ -1,0 +1,24 @@
+---
+description: Node.js / TypeScript server conventions for GNO tools
+globs: "{apps/api,packages,scripts}/**/*.{ts,js,mjs}"
+alwaysApply: false
+---
+
+# Node.js / TypeScript (GNO)
+
+## Style
+
+- TypeScript strict; avoid `any` unless bridging untyped CSV/JSON edges (narrow ASAP).
+- Prefer `async`/`await`; propagate errors or map to Nest HTTP exceptions at the boundary.
+- Named exports for helpers; default export only when the framework expects it (e.g. Nest module class files as established).
+
+## I/O
+
+- Parse files (CSV/TSV/JSON) in dedicated parsers; keep services orchestration-only.
+- Never commit secrets; use `.env` / local Supabase only.
+- Paths: resolve from known roots; do not assume `cwd` in library code.
+
+## Constants
+
+- Magic numbers → `const` / `DEFAULT_*` in a types or constants module.
+- Shared page sizes, thresholds, and timeouts live once and are imported.

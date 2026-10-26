@@ -1,0 +1,4 @@
+as-of	campaign-id	campaign-name	campaign-state	ad-group-id	ad-group-name
+2026-10-22	camp-exact	SP | Planners | Exact | Ramp	enabled	ag-exact-core	Core keywords
+2026-10-22	camp-auto	SP | Planners | Auto | Ramp	enabled	ag-auto-default	Auto targeting
+2026-10-22	camp-mature	SP | Planners | Phrase | Mature	enabled	ag-mature-core	Core keywords

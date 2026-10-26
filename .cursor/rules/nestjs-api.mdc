@@ -1,0 +1,39 @@
+---
+description: NestJS API conventions for GNO tools (modules, DTOs, services, repositories)
+globs: apps/api/**/*.{ts,tsx}
+alwaysApply: false
+---
+
+# NestJS API (GNO)
+
+## Module shape
+
+```
+<feature>/
+  <feature>.module.ts
+  <feature>.controller.ts   # routes only
+  <feature>.service.ts
+  dto/*.dto.ts
+  types.ts                  # domain + DEFAULT_* constants
+  rules.ts                  # optional pure logic
+  __tests__/
+```
+
+Internal modules (no HTTP): export `XxxService` only; keep `XxxRepository` unexported.
+
+## DTOs
+
+- One request family per file under `dto/`.
+- Use `class-validator` + `class-transformer` (`@Type` for nested).
+- Global pipe: `whitelist`, `transform`, `forbidNonWhitelisted`.
+
+## Layering
+
+- Controller → Service → Repository or internal data Service.
+- Do not inject another feature’s repository across module boundaries; go through its exported service.
+- Supabase access only in repositories (or supabase module client).
+
+## Errors
+
+- Invalid client input → `BadRequestException`.
+- DB/unavailable → `ServiceUnavailableException` (or equivalent) from repository/service.

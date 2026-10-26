@@ -1,0 +1,4 @@
+audience-id	campaign-id	audience-name	audience-kind	percent
+aud-views	camp-exact	Views remarketing	standard	0
+aud-b2b	camp-exact	Amazon Business	b2b	10
+aud-purchased	camp-auto	Purchased brand	standard	5

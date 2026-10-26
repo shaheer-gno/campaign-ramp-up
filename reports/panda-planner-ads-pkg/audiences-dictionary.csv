@@ -1,0 +1,6 @@
+audience_id,audience_name,audience_path,audience_class,target_type
+394385273367848569,AMC Add to cart,Audience Category > Custom-built > AMC,AMC,AUDIENCE
+413580582382876358,Clicked or Added brand's product to cart,Audience Category > Custom-built > Product,Product,AUDIENCE
+429511664623053651,Similar to shoppers who engage with your or comparable products,Audience Category > Custom-built > Product,Product,AUDIENCE
+430778787414928818,Purchased brand's product,Audience Category > Custom-built > Product,Product,AUDIENCE
+412978094962770620,High interest based on shopping history,Audience Category > Custom-built > Product,Product,AUDIENCE

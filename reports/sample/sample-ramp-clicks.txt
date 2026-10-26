@@ -1,0 +1,9 @@
+target-id	date	clicks
+kw-planner	2026-10-21	1
+kw-planner	2026-10-20	0
+kw-adhd	2026-10-21	3
+kw-adhd	2026-10-20	3
+auto-close	2026-10-21	0
+auto-close	2026-10-20	1
+kw-weekly	2026-10-21	20
+kw-weekly	2026-10-20	18

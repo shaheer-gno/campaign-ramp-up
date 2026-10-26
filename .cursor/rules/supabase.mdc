@@ -1,0 +1,24 @@
+---
+description: Supabase / Postgres conventions for GNO tools
+globs: "{supabase,apps/api/**/supabase*,**/repository*.ts}/**/*"
+alwaysApply: false
+---
+
+# Supabase (GNO)
+
+## Schema
+
+- Migrations only under `supabase/migrations/` — no ad-hoc prod DDL from the app.
+- Primary keys and uniqueness must match ingested Amazon report identities (composite keys when needed).
+- Document non-obvious columns in `docs/ARCHITECTURE.md`.
+
+## Access
+
+- Server uses service role / local client via a single supabase module.
+- Repositories own queries; services do not embed raw SQL/filters except through the repository.
+- Prefer upsert with clear conflict targets matching migration constraints.
+
+## Local
+
+- Each tool has its own Supabase ports — do not collide with sibling tools.
+- Reset/migrate via project scripts; keep sample data paths under `reports/` or documented fixtures.

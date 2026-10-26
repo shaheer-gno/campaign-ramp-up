@@ -1,0 +1,17 @@
+{
+  "name": "campaign-ramp-up",
+  "private": true,
+  "packageManager": "pnpm@9.15.0",
+  "scripts": {
+    "dev": "pnpm -r --parallel --filter @ramp/api --filter @ramp/web run dev",
+    "dev:api": "pnpm --filter @ramp/api dev",
+    "dev:web": "pnpm --filter @ramp/web dev",
+    "test": "pnpm --filter @ramp/api test",
+    "typecheck": "pnpm -r run typecheck",
+    "db:start": "npx supabase start",
+    "db:status": "npx supabase status",
+    "db:migrate": "npx supabase migration up",
+    "db:reset": "npx supabase db reset"
+  },
+  "engines": { "node": ">=22" }
+}

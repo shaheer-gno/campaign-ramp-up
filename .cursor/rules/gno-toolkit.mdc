@@ -1,0 +1,35 @@
+---
+description: GNO monorepo toolkit — structure, Nest/React layout, coding standards for all tools
+alwaysApply: true
+---
+
+# GNO toolkit (always)
+
+Human source of truth: `GNO/projects/TOOLKIT.md`. Follow it for every tool under `GNO/projects/`.
+
+## Layout
+
+- One tool = one folder + own git repo, `.env`, Supabase ports.
+- `apps/api` (Nest) + `apps/web` (Vite React) + `supabase/migrations` + `docs/ARCHITECTURE.md`.
+- HTTP feature modules: `controller` + `service` + `dto/` + optional `rules.ts` / `types.ts`.
+- Internal data modules (e.g. `ads/`): **no controller**; export `*Service` only; repository private.
+- Controllers stay thin — **no inline DTO classes**.
+
+## Request path
+
+`HTTP → DTO → service → rules (pure) + repository/data service`
+
+- No business math in controllers or repositories.
+- `rules.ts` has no Nest, Supabase, or `fs`.
+
+## Defaults
+
+Named constants (`DEFAULT_*`, page sizes) in `types.ts` / `shared/constants.ts` — not magic numbers in JSX or services.
+
+## Docs
+
+Update `README.md` + `docs/ARCHITECTURE.md` in the same change as structure or operator-flow changes.
+
+## Checks
+
+`pnpm test` and `pnpm typecheck` before calling work done.

@@ -1,0 +1,7 @@
+campaign-id	date	spend-usd
+camp-exact	2026-10-21	1.40
+camp-exact	2026-10-20	0.80
+camp-auto	2026-10-21	0.00
+camp-auto	2026-10-20	0.20
+camp-mature	2026-10-21	42.50
+camp-mature	2026-10-20	38.00

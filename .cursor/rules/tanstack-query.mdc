@@ -1,0 +1,27 @@
+---
+description: TanStack Query (React Query) conventions for GNO web apps
+globs: apps/web/**/*.{ts,tsx}
+alwaysApply: false
+---
+
+# TanStack Query (GNO)
+
+## When to use
+
+- Server state (lists, previews, uploads, job status) → Query / Mutation.
+- Ephemeral UI state (modals, selection, local filters) → React state.
+
+## Keys
+
+- Stable, hierarchical keys: `['ramp', 'preview', params]`, `['ads', 'upload']`.
+- Include every input that changes the response in the key or mutation variables.
+
+## Mutations
+
+- Invalidate or setQueryData related queries after success.
+- Surface API errors to the user (toast / SweetAlert / inline) — do not swallow.
+
+## Fetchers
+
+- Thin `api/*` helpers that return typed JSON; hooks wrap those helpers.
+- Do not put Nest DTO classes on the client — use shared types or inferred response types.

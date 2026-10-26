@@ -1,0 +1,5 @@
+target-id	campaign-id	ad-group-id	target-kind	label	match-type	bid
+kw-planner	camp-exact	ag-exact-core	keyword	panda planner	exact	0.85
+kw-adhd	camp-exact	ag-exact-core	keyword	adhd daily planner	exact	1.10
+auto-close	camp-auto	ag-auto-default	product_target	close-match	auto	0.60
+kw-weekly	camp-mature	ag-mature-core	keyword	weekly planner	phrase	1.40

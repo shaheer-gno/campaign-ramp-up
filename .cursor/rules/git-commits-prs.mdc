@@ -1,0 +1,30 @@
+---
+description: Git commit messages and pull request conventions for GNO tools
+alwaysApply: true
+---
+
+# Git commits & PRs (GNO)
+
+## Commits
+
+- Only commit when the user asks (or explicitly says to push / open a PR).
+- Message: short why-focused summary (1–2 sentences). Prefer imperative mood.
+  - Good: `Add paginated change log with campaign filter`
+  - Bad: `Update files` / `Fix stuff` / dump of file names
+- Use a HEREDOC for the message body when committing via CLI.
+- Never commit `.env`, keys, tokens, or local Supabase secrets.
+- Never use `--no-verify` / skip hooks unless the user asks.
+- Do not amend pushed commits unless the user explicitly requests it and amend rules are met.
+
+## Pull requests
+
+- One concern per PR when splitting is reasonable.
+- Title matches the change intent; body has:
+  - **Summary** — 1–3 bullets of what/why
+  - **Test plan** — checklist (typecheck, tests, manual UI path)
+- Push with `-u` when creating the branch remote; return the PR URL when done.
+- Do not force-push `main`/`master`.
+
+## Repos
+
+- Each GNO tool is its **own** git repo. Do not nest both tools in one remote.

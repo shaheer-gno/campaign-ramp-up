@@ -1,0 +1,34 @@
+---
+description: React + Vite UI conventions for GNO tool frontends
+globs: apps/web/**/*.{ts,tsx,css}
+alwaysApply: false
+---
+
+# React web (GNO)
+
+## Stack
+
+Vite + React + TypeScript. Prefer functional components; keep pages thin.
+
+## Structure
+
+- Feature UI under `apps/web/src/` (pages/components as the tool already uses).
+- Shared defaults and option lists in `shared/constants.ts` (or equivalent) — **not** magic numbers in JSX.
+- Types that mirror API contracts stay next to the feature or in a thin `api`/`types` module.
+
+## UI habits
+
+- Loading / empty / error states explicit.
+- Forms: controlled inputs; validate before mutate.
+- Prefer existing design tokens / CSS vars in the tool; do not invent a second design system.
+- No business gate math in the browser that the API already owns — call the API and display results.
+
+## Listings (shared across tools)
+
+Ramp-up is the reference. Use `div.table-wrap.list-table` > `table` with sticky headers. Center numeric cells; `className="left"` for labels. Do not add a parallel `data-table` system. Keep CSS tokens and panel/badge/pagination patterns aligned between FBA and ramp (`TOOLKIT.md` §8).
+
+## Anti-patterns
+
+- Inline DTO-like validation that duplicates Nest rules without need.
+- Hardcoded thresholds (`3`, `5`, page sizes) scattered in components — use named constants.
+- Different table shells per tool.

@@ -1,0 +1,10 @@
+campaign-id	placement	percent
+camp-exact	top_of_search	0
+camp-exact	rest_of_search	15
+camp-exact	product_pages	0
+camp-auto	top_of_search	0
+camp-auto	rest_of_search	0
+camp-auto	product_pages	25
+camp-mature	top_of_search	40
+camp-mature	rest_of_search	10
+camp-mature	product_pages	0
